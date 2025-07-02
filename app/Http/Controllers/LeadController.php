@@ -14,23 +14,20 @@ class LeadController extends Controller
     {
         $query = Lead::with('user');
 
-        // Filter by name (search)
         if ($request->filled('name')) {
             $query->where('name', 'like', '%' . $request->name . '%');
         }
 
-        // Filter by date range
         if ($request->filled('start_date') && $request->filled('end_date')) {
             $query->whereBetween('lead_given_date', [$request->start_date, $request->end_date]);
         }
 
-        // Filter by assigned user
         if ($request->filled('user_id')) {
             $query->where('user_id', $request->user_id);
         }
 
         $leads = $query->get();
-        $users = User::all(); // For filter dropdown
+        $users = User::all();
 
         return view('leads.index', compact('leads', 'users'));
     }
@@ -42,7 +39,7 @@ class LeadController extends Controller
     // }
     public function create()
     {
-        $users = User::all(); // Fetch all users for CRE/DSE assignment
+        $users = User::all();
         return view('leads.create', compact('users'));
     }
 

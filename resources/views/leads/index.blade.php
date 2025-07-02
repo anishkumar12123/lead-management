@@ -35,7 +35,6 @@
         <a href="{{ route('leads.create') }}" class="btn btn-success"><i class="fas fa-plus-circle"></i> Create New Lead</a>
     </div>
 
-    <!-- Filter Card -->
     <div class="card card-shadow mb-4">
         <div class="card-body">
             <form method="GET" action="{{ route('leads.index') }}" class="row g-3 align-items-end">
@@ -67,7 +66,6 @@
         </div>
     </div>
 
-    <!-- Leads Table -->
     <div class="card card-shadow">
         <div class="card-header bg-dark text-white">
             <h5 class="mb-0"><i class="fas fa-table"></i> Leads Listing</h5>
@@ -121,7 +119,6 @@
     </div>
 </div>
 
-<!-- Bootstrap & FontAwesome Scripts -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
 
